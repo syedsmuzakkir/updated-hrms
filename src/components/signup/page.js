@@ -37,7 +37,7 @@ const Signup = () => {
               rules={[
                 {
                   required: true,
-                  message: `${false ? "hello" : ""}`,
+                  message: `${false ? "hello" : "Please enter valid email"}`,
                 },
               ]}
             >
@@ -101,7 +101,7 @@ const Signup = () => {
           <br />
           <span className="">
             Have an account ?{" "}
-            <Link href="#" className="text-[#1890FF]">
+            <Link href="login" className="text-[#1890FF]">
               Sign in
             </Link>
           </span>
