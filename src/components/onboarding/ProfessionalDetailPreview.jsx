@@ -15,19 +15,18 @@ const PreviewCompany = ({ setInStep, setStep, step, inStep }) => {
       </div>
       <div className="flex flex-col gap-1 items-center  w-[50vw] relative leading-8">
         <Link href="/login">
-      
-        <div
-          className="flex  items-center px-1 gap-1 border border-blue-500 text-black group btn hover:bg-blue-100 transition w-[100px] absolute rounded-sm
+          <div
+            className="flex  items-center px-1 gap-1 border border-blue-500 text-black group btn hover:bg-blue-100 transition w-[100px] absolute rounded-sm
          right-2 -top-5 cursor-pointer"
-        >
-          <Image
-            width={15}
-            height={15}
-            src={Logout}
-            className="group-hover:bg-white"
-          />
-          <button className="">Logout</button>
-        </div>
+          >
+            <Image
+              width={15}
+              height={15}
+              src={Logout}
+              className="group-hover:bg-white"
+            />
+            <button className="">Logout</button>
+          </div>
         </Link>
         <div className="w-full ">
           <div className="w-full  flex flex-col">
@@ -118,7 +117,12 @@ const PreviewCompany = ({ setInStep, setStep, step, inStep }) => {
             </div>
           </div>
         </div>
-        <button className="w-[70%] lg:mt-6 h-8 bg-[#1890FF] hover:bg-blue-600 transition-all text-white items-end">
+        <button
+          className="w-[70%] lg:mt-6 h-8 bg-[#1890FF] hover:bg-blue-600 transition-all text-white items-end"
+          onClick={() => {
+            setStep(step + 1);
+          }}
+        >
           Complete
         </button>
       </div>

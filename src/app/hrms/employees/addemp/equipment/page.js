@@ -1,12 +1,11 @@
 import React from 'react'
-import Sidebar from '@/components/dashboard/sidebar'
+import Equipments from '@/components/employees/addemp/equipment/page'
 
 const page = () => {
   return (
     <div>
-
-<Sidebar/>
-
+    
+ <Equipments/>
     </div>
   )
 }

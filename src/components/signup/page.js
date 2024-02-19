@@ -3,15 +3,22 @@ import { useRef } from "react";
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+import { UseDispatch } from "react-redux";
 import { Button, Checkbox, Form, Input } from "antd";
+import { useRouter } from "next/navigation";
 // import signup from "../../../public/assets/photos/signup/signuphero.png";
 import signup from "@/../public/assets/photos/signup/signuphero1.svg";
 import hrmslogo from "@/../public/assets/photos/signup/hrmslogo.svg";
 
 const Signup = () => {
+  const router = useRouter();
   const email = useRef();
   const password = useRef();
   const passwordConfirm = useRef();
+
+  const handleOnSubmit = () => {
+    router.push("/signup/confirm-mail");
+  };
   // console.log(email.current.value);
   return (
     <div className="flex justify-center items-center p-10 gap-16">
@@ -31,6 +38,10 @@ const Signup = () => {
           <Form
             className="flex flex-col "
             style={{ width: "50vh", fontSize: "1.1rem" }}
+            onFinish={() => {
+              console.log("form submitted");
+              router.push("/signup/confirm-mail");
+            }}
           >
             <Form.Item
               name="email"
@@ -45,6 +56,7 @@ const Signup = () => {
                 placeholder="Email"
                 style={{ fontSize: "1.2rem" }}
                 ref={email}
+                required={true}
                 onChange={(e) => {
                   email.current.value = e.target.value;
                 }}
@@ -63,6 +75,7 @@ const Signup = () => {
                 placeholder="Password(6 digits at least, case sensitive)"
                 style={{ fontSize: "1.1rem" }}
                 size="large"
+                required={true}
               />
             </Form.Item>
 
@@ -79,24 +92,31 @@ const Signup = () => {
                 placeholder="Comfirm password"
                 style={{ fontSize: "1.1rem" }}
                 size="large"
+                required={true}
               />
             </Form.Item>
-            <Link href="/signup/confirm-mail">
-              <Button
-                className="w-full"
-                type="primary"
-                style={{
-                  fontSize: "1.2rem",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  paddingBottom: "10px",
-                }}
-                size="large"
-              >
-                Create Account
-              </Button>
-            </Link>
+            {/* <Link href="/signup/confirm-mail"> */}
+            <Button
+              className="w-full "
+              // type="primary"
+              type="submit"
+              style={{
+                fontSize: "1.2rem",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                paddingBottom: "10px",
+                backgroundColor: "#1890FF",
+                color: "white",
+              }}
+              size="large"
+              onClick={() => {
+                handleOnSubmit();
+              }}
+            >
+              Create Account
+            </Button>
+            {/* </Link> */}
           </Form>
           <br />
           <span className="">

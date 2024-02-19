@@ -65,11 +65,11 @@ const PreviewEmp = ({ setInStep, inStep, step, setStep }) => {
             <div className="flex  justify-start gap-40 border-b-2 -mt-2  border-gray-200 w-full">
               <span className="  flex flex-col gap-1 ">
                 <span className="text-gray-400 ">First Name</span>
-                <span>Abdullah</span>
+                <span>John</span>
               </span>
               <span className="flex flex-col gap-1 pl-4">
                 <span className="text-gray-400 ">Last Name</span>
-                <span>Abdullah</span>
+                <span>Wane</span>
               </span>
             </div>
             <div className="flex flex-col gap-1  border-b-2 border-gray-200 w-full">
@@ -78,11 +78,11 @@ const PreviewEmp = ({ setInStep, inStep, step, setStep }) => {
             </div>
             <div className="flex flex-col gap-1  border-b-2 border-gray-200 w-full">
               <span className="text-gray-400 ">Phone Number</span>
-              <span>91+ 9505934716</span>
+              <span>91+ 1234567891</span>
             </div>
             <div className="flex flex-col gap-1  border-b-2 border-gray-200 w-full">
               <span className="text-gray-400 "> Date of Birth</span>
-              <span>15/08/2002</span>
+              <span>01/01/2000</span>
             </div>
           </div>
         </div>

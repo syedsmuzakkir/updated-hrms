@@ -14,7 +14,7 @@ const page = () => {
       {step == 1 && <Onboarding step={step} setStep={setStep} />}
       {step == 2 && <CompanyDetails step={step} setStep={setStep} />}
       {step == 3 && <PreviewDetails step={step} setStep={setStep}/>}
-      {step == 4 && router.push("/dashboard")}
+      {step == 4 && router.push("/hrms")}
     </div>
   );
 };
