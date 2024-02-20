@@ -12,18 +12,18 @@ import FileTable from './FileTable';
 
 
 
-const Documents = () => {
+const Documents = ({tab,setTab}) => {
 
   return (
-    <div className='w-full h-full p-10 flex flex-col '>
+    <div className="w-full h-full p-10 flex flex-col ">
       <div>
-        <Upload/>
+        <Upload />
       </div>
 
-      <div className='mt-10 border border-gray-400 p-4 rounded-xl'>
-        <div className='flex justify-between'>
-          <div className='flex gap-2'>
-            <div className='bg-[#E6F7FF] w-10 h-10 flex items-center justify-center rounded-full'>
+      <div className="mt-10 border border-gray-400 p-4 rounded-xl">
+        <div className="flex justify-between">
+          <div className="flex gap-2">
+            <div className="bg-[#E6F7FF] w-10 h-10 flex items-center justify-center rounded-full">
               <FaRegFileAlt />
             </div>
             <spam>
@@ -32,21 +32,24 @@ const Documents = () => {
             </spam>
           </div>
           <RxCross2 />
-
         </div>
 
-        <Progress percent={20} showInfo={true} className='ml-12 w-[96%] '/>
-
+        <Progress percent={20} showInfo={true} className="ml-12 w-[96%] " />
       </div>
 
-      <p className='mt-6 font-semibold text-lg'>Attach Files</p>
-      <FileTable/>
+      <p className="mt-6 font-semibold text-lg">Attach Files</p>
+      <FileTable />
 
-      <button className='w-[30%] bg-[#1890FF] text-white m-auto h-9 '>Next</button>
-
+      <button
+        className="w-[30%] bg-[#1890FF] text-white m-auto h-9 "
+        onClick={() => {
+          setTab(tab + 1);
+        }}
+      >
+        Next
+      </button>
     </div>
-   
-  )
+  );
 }
 
 export default Documents

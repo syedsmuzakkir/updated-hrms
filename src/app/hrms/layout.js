@@ -3,13 +3,20 @@
 import { Inter } from "next/font/google";
 
 import "../globals.css";
+// import {
+//   DashboardOutlined,
+//   DesktopOutlined,
+//   FileOutlined,
+//   PieChartOutlined,
+//   TeamOutlined,
+//   UserOutlined,
+// } from "@ant-design/icons";
 import {
   DashboardOutlined,
-  DesktopOutlined,
-  FileOutlined,
-  PieChartOutlined,
-  TeamOutlined,
+  FormOutlined,
+  TableOutlined,
   UserOutlined,
+  HighlightOutlined,
 } from "@ant-design/icons";
 import { Breadcrumb, Layout, Menu } from "antd";
 import React, { useState } from "react";
@@ -65,6 +72,42 @@ function getItem(label, key, icon, children) {
 export default function RootLayout({ children }) {
   const [collapsed, setCollapsed] = useState(false);
   const onSearch = (value) => console.log(value);
+
+  function getItem(label, key, icon, children) {
+    return {
+      key,
+      icon,
+      children,
+      label,
+    };
+  }
+
+  const items = [
+    getItem(<Link href={"/hrms"}>Dashboard</Link>, "1", <DashboardOutlined />),
+    getItem(<Link href={"/projects"}>Project</Link>, "2", <FormOutlined />),
+    getItem(
+      <Link href={"/hrms/employees"}>Employees</Link>,
+      "3",
+      <TableOutlined />
+    ),
+    getItem(
+      <Link href={"/hrms/preference"}>Preference</Link>,
+      "4",
+      <UserOutlined />
+    ),
+    getItem(
+      <Link href={"/compliance"}>Compliance</Link>,
+      "5",
+      <HighlightOutlined />
+    ),
+  ];
+
+  const siderStyle = {
+    textAlign: "left",
+    color: "#fff",
+    backgroundColor: "#fff",
+  };
+
   return (
     <html lang="en">
       <body>
@@ -114,7 +157,7 @@ export default function RootLayout({ children }) {
             </div>
           </Header>
 
-          <Layout hasSider>
+          {/* <Layout hasSider>
             <Sider
               style={{
                 overflow: "auto",
@@ -130,11 +173,11 @@ export default function RootLayout({ children }) {
               trigger={null}
               collapsible
               collapsed={collapsed}
-            >
-              {/* <div className="logo" /> */}
-              {/* <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={items} /> */}
+            > */}
+          {/* <div className="logo" /> */}
+          {/* <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={items} /> */}
 
-              <div className="container flex flex-col justify-center items-center text-black">
+          {/* <div className="container flex flex-col justify-center items-center text-black">
                 <Link
                   href={"/hrms"}
                   className="text-black w-full py-3 hover:bg-cyan-50 px-2 flex justify-between items-start"
@@ -206,6 +249,97 @@ export default function RootLayout({ children }) {
                     marginLeft: 200,
                     // padding:'10px',
                   }}
+                >
+                  {children}
+
+                  <Footer
+                    style={{
+                      // textAlign: 'center',
+                      marginLeft: 200,
+                    }}
+                  ></Footer>
+                </div>
+              </Content>
+            </Layout>
+          </Layout> */}
+          <Layout style={{ minHeight: "100vh" }}>
+            <Sider
+              // style={siderStyle}
+              collapsible
+              collapsed={collapsed}
+              onCollapse={(value) => setCollapsed(value)}
+              style={{
+                overflow: "auto",
+                height: "100vh",
+                position: "fixed",
+                marginTop: "10vh",
+                left: 0,
+                top: 0,
+                bottom: 0,
+              }}
+            >
+              <div />
+              <Menu
+                theme="light"
+                defaultSelectedKeys={["1"]}
+                mode="inline"
+                style={{ height: "100%" }}
+                items={items}
+              >
+                {/* <Menu.Item key="1" icon={<DashboardOutlined />}>
+              <Link href="/dashboard">
+                <a>Dashboard</a>
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="2" icon={<FormOutlined />}>
+              <Link href="/project">
+                <a>Project</a>
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="3" icon={<TableOutlined />}>
+              <Link href="/employees">
+                <a>Employees</a>
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="4" icon={<UserOutlined />}>
+              <Link href="/preference">
+                <a>Preference</a>
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="5" icon={<HighlightOutlined />}>
+              <Link href="/compliance">
+                <a>Compliance</a>
+              </Link>
+            </Menu.Item> */}
+              </Menu>
+            </Sider>
+            <Layout className="site-layout flex flex-col">
+              <Content
+                style={{
+                  // margin: '24px 16px 0',
+
+                  // overflow: 'initial',
+
+                  // display:"flex",
+                  // flexDirection:"column"
+                  paddingLeft: 10,
+                }}
+              >
+                <div
+                  className={`${collapsed ? "ml-[80px]" : "ml-[200px]"}`}
+                  // {collapsed?style={{marginLeft: 80}}:style={{marginLeft: 200}}}
+                  style={
+                    {
+                      // padding: 24,
+                      // textAlign: 'center',
+                      // position:"absolute",
+                      // left:"13%",
+                      // top:"2%",
+                      // width:"85%"
+                      // marginLeft: 200,
+                      // padding:'10px',
+                    }
+                  }
                 >
                   {children}
 

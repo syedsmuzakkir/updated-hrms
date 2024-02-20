@@ -3,7 +3,7 @@ import Image from "next/image";
 import Img from "@/../../public/assets/empDetails/projectscard.svg";
 import { MdOutlineWatchLater } from "react-icons/md";
 // import { Image } from "next/image";
-import img1 from "@/../../public/assets/empDetails/Avatar1.svg"
+import img1 from "@/../../public/assets/empDetails/Avatar1.svg";
 import img2 from "@/../../public/assets/empDetails/Avatar2.svg";
 import img3 from "@/../../public/assets/empDetails/Avatar3.svg";
 
@@ -26,13 +26,14 @@ const ProjectsCard = () => {
         </span>
       </div>
       <div className="flex justify-between p-5">
-        <p className="border mt-2 border-green-400 text-green-600 bg-green-50 p-1 w-[32%] h-8 rounded-sm flex items-center justify-center">Completed</p>
-        <div className=" relative w-[25%] h-10 ">
-            <Image src={img1} className="absolute left-1 top-2"/>
-            <Image src={img2} className="absolute left-6 top-2"/>
-            <Image src={img3} className="absolute left-10 top-0"/>
+        <p className="border mt-2 border-green-400 text-green-600 w-fit bg-green-50 p-1  h-8 rounded-sm flex items-center justify-center">
+          Completed
+        </p>
+        <div className=" relative w-[30%] h-10 ">
+          <Image src={img1} className="absolute left-1 top-2" />
+          <Image src={img2} className="absolute left-6 top-2" />
+          <Image src={img3} className="absolute left-10 top-0" />
         </div>
-
       </div>
     </div>
   );

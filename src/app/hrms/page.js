@@ -61,23 +61,22 @@ const page = () => {
   const data = [
     {
       key: "1",
-      img: "",
       name: "John Brown",
-      empId: "email@gmail.com",
-      email: 60,
+      empId: 60,
+      email: "email@gmail.com",
       english: 70,
     },
     {
       key: "2",
       name: "Jim Green",
-      empId: "email@gmail.com",
-      email: 66,
+      empId: 55,
+      email: "email@gmail.com",
       english: 89,
     },
     {
       key: "3",
       name: "Joe Black",
-      empId: "email@gmail.com",
+      empId: "1545454",
       email: "email@gmail.com",
       english: 70,
     },

@@ -1,14 +1,19 @@
 "use client";
 import React from "react";
-import { Table } from "antd";
+import { Table, Breadcrumb } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import Plus from "../../../../public/assets/homeicons/Union.svg";
 import { useRouter } from "next/navigation";
+import Avatar from "@/../public/assets/empDetails/Avatar1.svg";
 
 const page = () => {
   const router = useRouter();
   const columns = [
+    // {
+    //   title: "Photo",
+    //   dataIndex: "photo",
+    // },
     {
       title: "Employee Name",
       dataIndex: "name",
@@ -57,28 +62,63 @@ const page = () => {
   const data = [
     {
       key: "1",
-      name: "John Brown",
-      empId: "email@gmail.com",
-      email: 60,
+      name: (
+        <Link
+          href="/hrms/employees/employeesOverView"
+          className="flex gap-2 items-center text-black"
+        >
+          <Image src={Avatar} />
+          John Brown
+        </Link>
+      ),
+      empId: 60,
+      email: "email@gmail.com",
       english: 70,
     },
     {
       key: "2",
-      name: "Jim Green",
-      empId: "email@gmail.com",
-      email: 66,
+
+      name: (
+        <Link
+          href="/hrms/employees/employeesOverView"
+          className="flex gap-2 items-center text-black"
+        >
+          <Image src={Avatar} />
+          John Brown
+        </Link>
+      ),
+      empId: 55,
+      email: "email@gmail.com",
       english: 89,
     },
     {
       key: "3",
-      name: "Joe Black",
-      empId: "email@gmail.com",
+
+      name: (
+        <Link
+          href="/hrms/employees/employeesOverView"
+          className="flex gap-2 items-center text-black"
+        >
+          <Image src={Avatar} />
+          John Brown
+        </Link>
+      ),
+      empId: "1545454",
       email: "email@gmail.com",
       english: 70,
     },
     {
       key: "4",
-      name: "Jim Red",
+
+      name: (
+        <Link
+          href="/hrms/employees/employeesOverView"
+          className="flex gap-2 items-center  text-black"
+        >
+          <Image src={Avatar} />
+          John Brown
+        </Link>
+      ),
       empId: 123526,
       email: "email@gmail.com",
       english: 89,
@@ -86,28 +126,64 @@ const page = () => {
 
     {
       key: "1",
-      name: "John Brown",
+
+      name: (
+        <Link
+          href="/hrms/employees/employeesOverView"
+          className="flex gap-2 items-center text-black"
+        >
+          <Image src={Avatar} />
+          John Brown
+        </Link>
+      ),
       empId: 143414,
       email: "email@gmail.com",
       english: 70,
     },
     {
       key: "2",
-      name: "Jim Green",
+
+      name: (
+        <Link
+          href="/hrms/employees/employeesOverView"
+          className="flex gap-2 items-center text-black"
+        >
+          <Image src={Avatar} />
+          John Brown
+        </Link>
+      ),
       empId: 2421432,
       email: "email@gmail.com",
       english: 89,
     },
     {
       key: "3",
-      name: "Joe Black",
+
+      name: (
+        <Link
+          href="/hrms/employees/employeesOverView"
+          className="flex gap-2 items-center text-black"
+        >
+          <Image src={Avatar} />
+          John Brown
+        </Link>
+      ),
       empId: 3242,
       email: "email@gmail.com",
       english: 70,
     },
     {
       key: "4",
-      name: "Jim Red",
+
+      name: (
+        <Link
+          href="/hrms/employees/employeesOverView"
+          className="flex gap-2 items-center text-black"
+        >
+          <Image src={Avatar} />
+          John Brown
+        </Link>
+      ),
       empId: 233244,
       email: "email@gmail.com",
       english: 89,
@@ -121,9 +197,21 @@ const page = () => {
   return (
     <div>
       <div className="flex justify-between p-4">
-        <h2>Employees</h2>
+        <div className="flex flex-col gap-2">
+          <Breadcrumb
+            items={[
+              {
+                title: "Dashboard",
+              },
+              {
+                title: <a href="">Employees</a>,
+              },
+            ]}
+          />
+          <h2 className="text-xl font-semibold">All Employees</h2>
+        </div>
         <Link href={"/hrms/employees/addemp"}>
-          <button className="bg-[#1890FF] text-white flex p-4 gap-3 justify-center items-center">
+          <button className="bg-[#1890FF] hover:bg-blue-600 text-white flex p-4 gap-3 justify-center items-center">
             {" "}
             <Image src={Plus} /> Add New Employees{" "}
           </button>
